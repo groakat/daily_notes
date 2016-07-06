@@ -2,7 +2,7 @@
 
 ## Table of contents
 
-### Homebrew
+### Conda
 
 [Installing OpenCV with Anaconda](conda/opencv3_with_anaconda.md)
-
+[Installing Tensorflow](conda/install_tensor_flow.md)
