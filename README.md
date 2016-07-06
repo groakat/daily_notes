@@ -4,5 +4,5 @@
 
 ### Homebrew
 
-[Installing OpenCV with Anaconda](homebrew/opencv3_with_anaconda.md)
+[Installing OpenCV with Anaconda](conda/opencv3_with_anaconda.md)
 
