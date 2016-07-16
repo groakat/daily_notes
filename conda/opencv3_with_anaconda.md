@@ -60,4 +60,13 @@ to `opencv/modules/python/common.cmake` (I added them at the top).
     	-D BUILD_EXAMPLES=ON ".." \
     	
     make -j8	
+    sudo make install
+    sudo ldconfig
+    
+Symlink package to anaconda:
+
+    cd ~/anaconda3/lib/python3.5/site-packages/
+    ln -s /usr/local/lib/python3.5/site-packages/cv2.cpython-35m-x86_64-linux-gnu.so cv2.so
+
+
     
