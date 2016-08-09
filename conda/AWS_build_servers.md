@@ -51,4 +51,41 @@ If that fails:
     anaconda upload videotagger-0.1.1-2.tar.bz2
   
   
+## Linux
+
+After creating AWS micro instance (Ubuntu)
+
+    #download Anaconda 
+    mkdir Downloads
+    cd Downloads
+    wget http://repo.continuum.io/archive/Anaconda2-4.1.1-Linux-x86_64.sh
+    chmod +x Anaconda2-4.1.1-Linux-x86_64.sh
+    
+    # install Anaconad
+    ./Anaconda2-4.1.1-Linux-x86_64.sh
+    source ~/.bashrc
+    
+    # upgrade conda
+    conda upgrade -y -build
+    conda config --add channels groakat
+    
+    # install git and clone repo
+    sudo apt-get install -y git
+    cd ..
+    mkdir projects
+    cd projects
+    git clone https://github.com/groakat/conda-recipes
+    
+    # build recipe
+    cd conda-recipes
+    conda build videoTagger
+    anaconda upload /home/ubuntu/anaconda2/conda-bld/linux-64/videotagger-0.1.1-2.tar.bz2
+    conda config --set anaconda_upload yes
+    
+    # rebuild recipe
+    cd ~/projects/conda-recipes
+    git pull
+    rm /home/ubuntu/anaconda2/conda-bld/linux-64/*
+    conda build videoTagger
+    
   
