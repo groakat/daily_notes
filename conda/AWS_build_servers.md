@@ -35,20 +35,20 @@ Follow guide here: http://petemoore.github.io/general/taskcluster/2016/03/30/win
 
 ### Clone and setup anaconda
 
-  cmd
-  cd PATH
-  conda config --add channels groakat
+    cmd
+    cd PATH
+    cond config --add channels groakat
   
 ### Build
 
-  conda build videotagger
-  anaconda upload C:\cygwin\home\Administrator\Anaconda2\conda-bld\win-64\videotagger-0.1.1-1.tar.bz2
+    conda build videotagger
+    anaconda upload C:\cygwin\home\Administrator\Anaconda2\conda-bld\win-64\videotagger-0.1.1-1.tar.bz2
   
 If that fails:
 
-  exit
-  scp -i '1470649420.pem' Administrator@52.50.213.43:/home/Administrator/Anaconda2/conda-bld/win-64/videotagger-0.1.1-2.tar.bz2 .
-  anaconda upload videotagger-0.1.1-2.tar.bz2
+    exit
+    scp -i '1470649420.pem' Administrator@52.50.213.43:/home/Administrator/Anaconda2/conda-bld/win-64/videotagger-0.1.1-2.tar.bz2 .
+    anaconda upload videotagger-0.1.1-2.tar.bz2
   
   
   
