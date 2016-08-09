@@ -7,7 +7,7 @@ Follow guide here: http://petemoore.github.io/general/taskcluster/2016/03/30/win
 
 ### Login
 
-  ssh -i '1470649420.pem' Administrator@52.50.213.43
+    ssh -i '1470649420.pem' Administrator@52.50.213.43
 
 ### Install apt-cyg
 
@@ -49,10 +49,27 @@ If that fails:
     exit
     scp -i '1470649420.pem' Administrator@52.50.213.43:/home/Administrator/Anaconda2/conda-bld/win-64/videotagger-0.1.1-2.tar.bz2 .
     anaconda upload videotagger-0.1.1-2.tar.bz2
+    
+    
+### Rebuild
+    IP=52.48.171.193
+    cd /Users/peter/Documents/phd/projects/build/pytools/windows
+    ssh -i '1470649420.pem' Administrator@$IP
+    
+    cd ~/projects/conda-recipes
+    git stash
+    git pull
+    rm /home/Administrator/Anaconda2/conda-bld/win-64/*
+    conda build videoTagger
+    exit
+    
+    scp -i '1470649420.pem' Administrator@$IP:/home/Administrator/Anaconda2/conda-bld/win-64/* .
+    anaconda upload `ls -Ahlt1 | head -n 1`
   
   
 ## Linux
 
+### Setup and first build
 After creating AWS micro instance (Ubuntu)
 
     #download Anaconda 
@@ -82,10 +99,15 @@ After creating AWS micro instance (Ubuntu)
     anaconda upload /home/ubuntu/anaconda2/conda-bld/linux-64/videotagger-0.1.1-2.tar.bz2
     conda config --set anaconda_upload yes
     
-    # rebuild recipe
+### Rebuild recipe
+
+    cd /Users/peter/Documents/phd/projects/build/pytools/linux
+    
+    ssh -i linux_bld.pem ubuntu@52.49.252.187
     cd ~/projects/conda-recipes
     git pull
     rm /home/ubuntu/anaconda2/conda-bld/linux-64/*
     conda build videoTagger
+    exit
     
   
