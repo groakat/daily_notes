@@ -25,4 +25,10 @@ Correct for bug with `memcpy` in string.h https://github.com/BVLC/caffe/issues/4
     NVCCFLAGS += -D_FORCE_INLINES -ccbin=$(CXX) -Xcompiler -fPIC $(COMMON_FLAGS).
     
     
+    make all -j8
+    make pycaffe
+    export PYTHONPATH=`pwd`/python:$PYTHONPATH
+    echo "export PYTHONPATH=`pwd`/python:\$PYTHONPATH" >> ~/.bashrc
+    
+    
 My `Makefile.config` file is here: https://gist.github.com/groakat/5290ba684db82c7083bbbc2859bef8d6
