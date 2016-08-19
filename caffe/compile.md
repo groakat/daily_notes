@@ -40,7 +40,7 @@ Make sure that you do **not** have `boost` installed (as it messes up the python
 
 
     git clone --recursive https://github.com/rbgirshick/py-faster-rcnn.git
-    cd py-faster-rcnn
+    cd py-faster-rcnn/caffe-fast-rcnn
     git remote add caffe https://github.com/BVLC/caffe.git
     git fetch caffe
     git merge caffe/master
