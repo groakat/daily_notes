@@ -1,6 +1,9 @@
 # Install CUDA
 - [AWS Instructions here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cluster_computing.html#install-nvidia-driver)
 - [Complete Tutorial here](http://www.pyimagesearch.com/2016/07/04/how-to-install-cuda-toolkit-and-cudnn-for-deep-learning/)
+
+```bash 
+
     sudo apt-get update
     sudo apt-get upgrade -y
     sudo apt-get install -y build-essential cmake git unzip pkg-config
@@ -57,7 +60,7 @@
     cd cuda
     sudo cp lib64/* /usr/local/cuda/lib64/
     sudo cp include/* /usr/local/cuda/include/
-
+```
 
 
 # Install Anaconda
