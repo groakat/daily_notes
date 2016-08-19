@@ -64,3 +64,12 @@
 
 
 # Install Anaconda
+
+```bash
+    cd ~/Downloads
+    wget http://repo.continuum.io/archive/Anaconda3-4.1.1-Linux-x86_64.sh
+    bash Anaconda3-4.1.1-Linux-x86_64.sh -b -p $HOME/anaconda3
+    
+    echo '#Anaconda
+    PATH="$HOME/anaconda3/bin:$PATH"' >> ~/.bashrc
+```
