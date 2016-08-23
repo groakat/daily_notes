@@ -50,19 +50,11 @@ If to be build with HDF5 support, follow https://github.com/opencv/opencv/issues
     include_directories(${HDF5_INCLUDE_DIRS})
     
 to `opencv/modules/python/common.cmake` (I added them at the top).
-    
-    cmake -D CMAKE_BUILD_TYPE=RELEASE \
-    	-D CMAKE_INSTALL_PREFIX=/usr/local \
-    	-D INSTALL_C_EXAMPLES=OFF \
-    	-D INSTALL_PYTHON_EXAMPLES=ON \
-    	-D WITH_CUDA=OFF \
-    	-D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
-    	-D BUILD_EXAMPLES=ON ".." \
-    	
-    make -j8	
-    sudo make install
-    sudo ldconfig
-    
+  
+```bash
+cmake -DBUILD_TIFF=ON -DBUILD_opencv_java=OFF -DWITH_CUDA=OFF -DENABLE_AVX=ON -DWITH_OPENGL=ON -DWITH_OPENCL=ON -DWITH_IPP=ON -DWITH_TBB=ON -DWITH_EIGEN=ON -DWITH_V4L=ON -DWITH_VTK=OFF -DBUILD_TESTS=OFF -DBUILD_PERF_TESTS=OFF -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_PREFIX=$(python3 -c "import sys; print(sys.prefix)") -DPYTHON3_EXECUTABLE=$(which python3) -DPYTHON3_INCLUDE_DIR=$(python3 -c "from distutils.sysconfig import get_python_inc; print(get_python_inc())") -DPYTHON3_PACKAGES_PATH=$(python3 -c "from distutils.sysconfig import get_python_lib; print(get_python_lib())") ..
+```
+
 Symlink package to anaconda:
 
     cd ~/anaconda3/lib/python3.5/site-packages/
