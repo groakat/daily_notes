@@ -8,7 +8,7 @@ First write out the file paths into a text file and then use `rsync`
 
 
 ```bash
-IN_PATH='/media/scratch/360 Cameras - Site/image_sequences/Cam 100 Tills 14 15/20160609_102000-20160609_222000_Camera 100 (Camera 100)_3'
+IN_PATH='/media/scratch/image_folder/'
 ls $IN_PATH | awk 'NR % 100 == 0' > files.txt
-rsync -avz -e "ssh -i faster-rcnn.pem" --files-from=files.txt  $IN_PATH ubuntu@52.212.21.43:/home/ubuntu/Documents/data/scan_avoidance_real/
+rsync -avz -e "ssh -i faster-rcnn.pem" --files-from=files.txt  $IN_PATH ubuntu@52.212.21.43:/home/ubuntu/Documents/data/
 ```
