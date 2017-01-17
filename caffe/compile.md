@@ -196,4 +196,4 @@ back in terminal:
 
 link the build folder to anaconda
 
-    ln -s /home/peter/Downloads/sources/caffe/python/caffe /home/peter/anaconda3/lib/python3.5/site-packages/caffe
+    ln -s python/caffe /home/peter/anaconda3/lib/python3.5/site-packages/caffe
